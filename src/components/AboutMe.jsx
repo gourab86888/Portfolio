@@ -44,7 +44,7 @@ const AboutMe = () => {
               </button>
 
               <a
-                href=""
+                href="./assets/Resume.pdf"
                 style={{ cursor: "none" }}
                 className="sm:text-center px-6 py-2 rounded-full border border-white text-violet-500 hover:bg-600 transition-colors duration-300"
               >
