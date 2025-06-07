@@ -110,6 +110,22 @@ export const ContactSection = () => {
           </div>
         </div>
       </div>
+      <div className="border-t border-gray-200 dark:border-gray-700 mt-16 pt-8">
+        <div className="container mx-auto max-w-4xl">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
+            <div className="text-center md:text-left">
+              <p className="text-gray-600 dark:text-gray-400 text-sm">
+                © 2025 Gourab Patra. All rights reserved.
+              </p>
+            </div>
+          </div>
+          <div className="mt-4 text-center">
+            <p className="text-xs text-gray-500 dark:text-gray-500">
+              Crafted with ❤️ in Hyderabad, India
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
