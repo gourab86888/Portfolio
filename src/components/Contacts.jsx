@@ -1,144 +1,117 @@
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { FiX } from "react-icons/fi";
+import {
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+} from "lucide-react";
 
-const Contacts = () => {
-  const [isContactFormOpen, setIsContactFormOpen] = useState(false);
-
-  const openContactForm = () => setIsContactFormOpen(true);
-  const closeContactForm = () => setIsContactFormOpen(false);
-
+export const ContactSection = () => {
   return (
-    <section id="contact" className="contacts">
-      <div className="container">
-        <h2>Contact Me</h2>
-        <p>If you have any questions or just want to say hi, feel free to reach out!</p>
-        <motion.button
-                    onClick={openContactForm}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    whileHover={{ 
-                        scale: 1.05,
-                        boxShadow: "0 10px 20px rgba(139, 92, 246, 0.3)"
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{
-                        delay: 1.5,
-                        duration: 0.8,
-                        type: "spring",
-                        stiffness: 100,
-                        damping: 15,
-                    }}
-                    className="ml-4 px-4 py-2 text-sm rounded-xl bg-gradient-to-r from-gray-400 to-gray-100 text-violet-700 font-bold hover:from-violet-700 hover:to-purple-700 hover:text-white transition-all duration-500"
-                >
-                    Contact Me
-                </motion.button>
-        <AnimatePresence>
-          {isContactFormOpen && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-            >
-              <motion.div
-                initial={{ scale: 0.8, opacity: 0, y: 30 }}
-                animate={{ scale: 1, opacity: 1, y: 0 }}
-                exit={{ scale: 0.8, opacity: 0, y: 30 }}
-                transition={{
-                  type: "spring",
-                  damping: 20,
-                  stiffness: 300,
-                  duration: 0.8,
-                }}
-                className="bg-white dark:bg-gray-800 rounded-xl shadow-xl w-full max-w-md p-6 "
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-300">
-                    Get In Touch
-                  </h1>
+    <section id="contact" className="py-24 px-4 relative bg-gray-50 dark:bg-gray-900/30">
+      <div className="container mx-auto max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+          Get In <span className="text-violet-600">Touch</span>
+        </h2>
 
-                  <motion.button
-                    whileHover={{ rotate: 90, scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    onClick={closeContactForm}
-                  >
-                    <FiX className="w-5 h-5 text-gray-800 dark:text-gray-300" />
-                  </motion.button>
+        <p className="text-center text-gray-600 dark:text-gray-300 mb-16 max-w-2xl mx-auto">
+          Have a project in mind or want to collaborate? Feel free to reach out.
+          I'm always open to discussing new opportunities.
+        </p>
+
+        <div className="max-w-2xl mx-auto">
+          <div className="space-y-8">
+            <h3 className="text-2xl font-semibold mb-8 text-center">
+              Contact Information
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-4 rounded-full bg-violet-100 dark:bg-violet-900/30">
+                  <Mail className="h-8 w-8 text-violet-600" />
                 </div>
-
-                {/*input Forms*/}
-                <form className="space-y-4 text-sm">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 }}
+                <div>
+                  <h4 className="font-medium text-lg mb-2">Email</h4>
+                  <a
+                    href="mailto:grvpatro@gmail.com"
+                    className="text-gray-600 dark:text-gray-300 hover:text-violet-600 transition-colors"
                   >
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 bg-gray-100 dark:bg-gray-700 transition-all duration-300"
-                      placeholder="Your Name"
-                    />
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2 }}
+                    grvpatro@gmail.com
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-4 rounded-full bg-violet-100 dark:bg-violet-900/30">
+                  <Phone className="h-8 w-8 text-violet-600" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-lg mb-2">Phone</h4>
+                  <a
+                    href="tel:+918688827815"
+                    className="text-gray-600 dark:text-gray-300 hover:text-violet-600 transition-colors"
                   >
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1">
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 bg-gray-100 dark:bg-gray-700 transition-all duration-300"
-                      placeholder="Your Email"
-                    />
-                  </motion.div>
+                    +91 8688827815
+                  </a>
+                </div>
+              </div>
+              
+              <div className="flex flex-col items-center text-center space-y-4">
+                <div className="p-4 rounded-full bg-violet-100 dark:bg-violet-900/30">
+                  <MapPin className="h-8 w-8 text-violet-600" />
+                </div>
+                <div>
+                  <h4 className="font-medium text-lg mb-2">Location</h4>
+                  <span className="text-gray-600 dark:text-gray-300">
+                    Hyderabad, India
+                  </span>
+                </div>
+              </div>
+            </div>
 
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1">
-                      Message
-                    </label>
-                    <textarea
-                      rows="4"
-                      id="message"
-                      className="w-full px-4 py-2 border border-gray-600 rounded-lg focus:ring-2 focus:ring-violet-500 bg-gray-100 dark:bg-gray-700 transition-all duration-300"
-                      placeholder="How can I help you?"
-                    />
-                  </motion.div>
+            <div className="pt-12">
+              <h4 className="font-medium text-lg mb-6 text-center">Connect With Me</h4>
+              <div className="flex justify-center space-x-6">
+                <a 
+                  href="https://www.linkedin.com/in/gourab76099/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 hover:bg-violet-600 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://x.com/Gourav_patro1" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 hover:bg-violet-600 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+                >
+                  <Twitter className="h-6 w-6" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/gourab_patra76099/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="p-4 rounded-full bg-violet-100 dark:bg-violet-900/30 text-violet-600 hover:bg-violet-600 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+                >
+                  <Instagram className="h-6 w-6" />
+                </a>
+              </div>
+            </div>
 
-                  <motion.button
-                    type="submit"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                    whileHover={{
-                      scale: 1.03,
-                      boxShadow: "0 10px 20px rgba(139, 92, 246, 0.4)",
-                    }}
-                    whileTap={{ scale: 0.97 }}
-                    className="w-full px-4 py-2 bg-gradient-to-r from-violet-600 to-violet-400 hover:from-violet-700 hover:to-purple-700 transition-all duration-300 rounded-lg shadow-md hover:shadow-lg hover:shadow-violet-600/50"
-                  >
-                    Send Message
-                  </motion.button>
-                </form>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            <div className="pt-8 text-center">
+              <div className="inline-flex items-center space-x-2 text-gray-600 dark:text-gray-300">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <span>Available for new projects</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
-export default Contacts;
+export default ContactSection;

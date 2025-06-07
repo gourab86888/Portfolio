@@ -3,7 +3,9 @@ import HeroSection from "./components/HeroSection"
 import CustomCursor from "./components/CustomCursor"
 import AboutMe from "./components/AboutMe"
 import SkillsSection from "./components/SkillsSection"
+import ProjectSection from "./components/ProjectSection"
 import Contacts from "./components/Contacts"
+
 
 export default function App() {
   return (
@@ -13,6 +15,7 @@ export default function App() {
       <CustomCursor />
       <AboutMe />
       <SkillsSection />
+      <ProjectSection />
       <Contacts />
       </>
          

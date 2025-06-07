@@ -17,8 +17,8 @@ const CustomCursor = () => {
         
         // Initial position offscreen
         gsap.set([cursor, border], {
-            xPercent: -50,
-            yPercent: -50
+            xPercent: -10,
+            yPercent: -10
         });
 
         // Quick cursor movement for main cursor
@@ -55,8 +55,8 @@ const CustomCursor = () => {
         const hoverElements = document.querySelectorAll('a, button, [role="button"]');
         
         const handleMouseEnter = () => {
-            gsap.to(cursor, { scale: 1.5, duration: 0.3 });
-            gsap.to(border, { scale: 2, duration: 0.4 });
+            gsap.to(cursor, { scale: 1.3, duration: 0.3 });
+            gsap.to(border, { scale: 1.5, duration: 0.4 });
         };
         
         const handleMouseLeave = () => {
@@ -88,21 +88,24 @@ const CustomCursor = () => {
 
     return (
         <>
-            {/* Border with delay - renders behind main cursor */}
+            {/* Arrow Border with delay - renders behind main cursor */}
             <div
                 ref={borderRef}
-                className="fixed top-0 left-0 w-[32px] h-[32px] border-2 border-white rounded-full pointer-events-none z-[9998]"
+                className="fixed top-0 left-0 w-[24px] h-[24px] pointer-events-none z-[9998]"
                 style={{
-                    boxShadow: '0 0 15px rgba(255, 255, 255, 0.3)'
+                    clipPath: 'polygon(0% 0%, 0% 80%, 20% 60%, 40% 100%, 50% 90%, 30% 50%, 100% 0%)',
+                    border: '2px solid white',
+                    filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.4))'
                 }}
             />
             
-            {/* Main White Ball Cursor */}
+            {/* Main White Arrow Cursor */}
             <div
                 ref={cursorRef}
-                className="fixed top-0 left-0 w-[16px] h-[16px] bg-white rounded-full pointer-events-none z-[9999]"
+                className="fixed top-0 left-0 w-[20px] h-[20px] bg-white pointer-events-none z-[9999]"
                 style={{
-                    boxShadow: '0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3)'
+                    clipPath: 'polygon(0% 0%, 0% 80%, 20% 60%, 40% 100%, 50% 90%, 30% 50%, 100% 0%)',
+                    filter: 'drop-shadow(0 0 6px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 12px rgba(255, 255, 255, 0.3))'
                 }}
             />
             
