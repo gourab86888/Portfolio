@@ -7,8 +7,8 @@ const projects = [
         image: "/projects/Portfolio.png",   
         description:"Personal portfolio website showcasing my skills and projects using react.",
         tags: ["React", "Tailwind CSS", "JavaScript","Gsap","Spline"],
-        demoUrl:"#",
-        githubUrl:"#"
+        demoUrl:"https://portfolio-aug9b50u5-gourab86888s-projects.vercel.app/",
+        githubUrl:"https://github.com/gourab86888/Portfolio"
     },
     {
         id:2,
@@ -16,8 +16,8 @@ const projects = [
         image: "/projects/p2.png",   
         description:"E-commerce website built with Angular and Firebase, featuring product listings, shopping cart functionality, and user authentication.",
         tags: ["Angular", "Css", "Typescript","Firebase"],
-        demoUrl:"#",
-        githubUrl:"#"
+        demoUrl:"https://shoes-hub-three.vercel.app/",
+        githubUrl:"https://github.com/gourab86888/Shoes-Hub"
     },
     {
         id:3,
@@ -25,8 +25,8 @@ const projects = [
         image: "/projects/Todo.png",   
         description:"A simple todo application built with Angular, TypeScript and CSS 5, allowing users to add, edit, and delete tasks.",
         tags: ["Angular", "Css", "Typescript",],
-        demoUrl:"#",
-        githubUrl:"#"
+        demoUrl:"https://todo-ang-iota.vercel.app/",
+        githubUrl:"https://github.com/gourab86888/Todo-ang"
     },
 ]
 
